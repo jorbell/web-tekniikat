@@ -1,0 +1,48 @@
+body {
+    text-align:center;
+    font-family: "Helvetica";
+}
+h1 {
+    font-size: 130px;
+    font-family:"Arial";
+    margin-top:20px;
+    margin-bottom:20px;
+}
+img {
+    border: 2px solid #c6d9f1;
+    margin-bottom:20px;
+}
+.first {
+    background-color: #c6d9f1;
+}
+.second {
+    background-color: #fde9d9;
+}
+.third {
+    background-color: #d99594;
+}
+td {
+    border-top:1px solid black;
+    border-bottom:1px solid black;
+}
+
+table {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    width:300px;
+}
+
+.berry {
+    margin-top:25px;
+    margin-bottom:25px;
+    font-size: 32px;
+    margin-bottom: 0px;
+}
+
+figcaption {
+    font-weight:bold;
+    font-size:16px;
+    margin-bottom:50px;
+}

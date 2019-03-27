@@ -1,0 +1,20 @@
+caption{
+    font-weight: bold;
+    border: 1px solid black;
+}
+thead {
+    background-color:red;
+    color:white;
+tbody {
+}
+.first{
+    font-weight:bold;
+    border-right: 1px solid black;
+}
+table {
+    border-collapse: collapse;
+}
+tr:nth-child(even) {background-color: #f2f2f2;}
+table, th, td {
+    border: 1px solid black;
+}
