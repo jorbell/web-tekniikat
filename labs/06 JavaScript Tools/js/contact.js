@@ -10,8 +10,17 @@ function process() {
     var okay = true;
     
     // Get form references:
+    var fullname = document.getElementById('fullname');
     var email = document.getElementById('email');
     var comments = document.getElementById('comments');
+
+    //Validate full name:
+    if (!email || (fullname.value.length < 3) 
+        || (fullname.value.length > 100)
+        || (fullname.value.indexOf(' ') === -1)) {
+       alert('Please enter your full name'); 
+    }
+
     // Validate the email address:
     if (!email || !email.value 
     || (email.value.length < 6) 
@@ -52,6 +61,7 @@ function process() {
     console.log(message);
     console.log("Email: " + email.value);
     console.log("Comments: " + comments.value);
+    console.log();
     alert(message);
 
     // Prevent submission for the purposes of this example:
