@@ -46,11 +46,23 @@
       }
 
       // set a callback function for when the httpRequest completes
-      httpRequest.onreadystatechange = alertContents;
+      //httpRequest.onreadystatechange = alertContents;
+      httpRequest.onreadystatechange = alertIfDown;
+
 
       // now do the actual AJAX request
       httpRequest.open('GET', url);
       httpRequest.send();
+    }
+    function alertIfDown() {
+      if (httpRequest.readyState === 4) {
+        if (httpRequest.status === 404) {
+          alert("The site is DOWN!");
+        } else {
+            alertContents();
+
+        }
+      }
     }
 
     // the callback
