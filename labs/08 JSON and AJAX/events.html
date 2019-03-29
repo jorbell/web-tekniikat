@@ -16,6 +16,9 @@ window.onload = function() {
 	} else if (div.attachEvent) {
 		div.attachEvent("click", handleClick);
 	}
+        var text = document.getElementById("mouseOverEvent");
+
+        text.addEventListener("mouseover", handleMouseOver, false);
 };
 
 function handleClick(e) {
@@ -28,10 +31,23 @@ function handleClick(e) {
 	}
 	alert("You clicked on " + target.id);
 }
+function handleMouseOver(e){
+	var evt = e || window.event;
+	var target;
+	if (evt.target) {
+		target = evt.target;
+	} else {
+		target = evt.srcElement;
+	}
+	alert("You hovered on " + target.id);
+}
 
   </script>
 </head>
 <body>
 <span id="clickme">Click me!</span>
+<div id="mouseOverEvent">
+    Some text
+</div>
 </body>
 </html>

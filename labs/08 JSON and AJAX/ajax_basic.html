@@ -9,6 +9,9 @@
   <span id="ajaxButton" style="cursor: pointer; text-decoration: underline">
     Make a request
   </span>
+  <br>
+  <input type="text" name="url" id="url" value="">
+  <input type="button" name="request" onclick="makeRequest('data/story.json')" id="request" value="Request Url">
 
 
   <script type="text/javascript">
@@ -18,6 +21,9 @@
     // Use Github Gist when no web server is available
     // var testUrl = 'https://gist.githubusercontent.com/c0lin/571d38b984d41b44aacf/raw/story.json';
     document.getElementById("ajaxButton").onclick = function() { makeRequest(testUrl); };
+    document.getElementById("request").onclick = function() {
+        var givenUrl = document.getElementById("url").value;
+        makeRequest(givenUrl);}
 
     function makeRequest(url) {
       if (window.XMLHttpRequest) { // Mozilla, Safari, ...
@@ -60,6 +66,5 @@
     }
   })();
   </script>
-
 </body>
 </html>
