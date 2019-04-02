@@ -3,16 +3,59 @@ var notes = [];
 /*
  * displays the 'add' screen if this has been bookmarked by user
  */
+
+//Function that triggers updateView() function after hash changed
+window.onhashchange = function(){
+    console.log("hash changed");
+    updateView();
+
+}
+
 if (window.location.hash == '#add' || notes.length === 0) {
-	document.getElementById('editPage').style.display = 'none';
+        document.getElementById('addPage').style.display = 'block';
 } else {
-	document.getElementById('addPage').style.display = 'none';
+        document.getElementById('addPage').style.display = 'none';
+}
+if (window.location.hash == '#edit') {
+        document.getElementById('editPage').style.display = 'block';
+} else {
+        document.getElementById('editPage').style.display = 'none';
+}
+
+//Update view function
+function updateView() {
+    if (window.location.hash == ''){
+        console.log("asdf");
+        return;
+    }
+    if (window.location.hash == '#add') {
+            document.getElementById('addPage').style.display = 'block';
+    } else {
+            document.getElementById('addPage').style.display = 'none';
+    }
+    if (window.location.hash == '#edit') {
+            document.getElementById('editPage').style.display = 'block';
+    } else {
+            document.getElementById('editPage').style.display = 'none';
+    }
 }
 
 document.querySelector('#addPage button').onclick = function() {
-	console.log('add note');
-	var title = document.querySelector('#addPage input').value;
-	var note = document.querySelector('#addPage textarea').value;
+    console.log('add note');
+    //Getting the values of input and textarea
+    var title = document.querySelector('#addPage input').value;
+    var note = document.querySelector('#addPage textarea').value;
+    //Pushing the values to list 
+    notes.push({title: title, note: note});
+
+    console.log(notes[notes.length - 1]);
+
+
+    //Reseting the values to empty;
+    document.querySelector('#addPage input').value = "";
+    document.querySelector('#addPage textarea').value = "";
+    loadList();
+        
 };
 
 /*
@@ -26,6 +69,14 @@ document.querySelector('nav > ul > li:nth-child(2)').onclick = function() {
 	console.log('second link clicked');
 };
 
+document.querySelector('#editPage input').onchange = function() {
+    updateNote();
+    loadList();
+}
+document.querySelector('#editPage textarea').onchange = function(){
+    updateNote();
+    loadList();
+}
 
 function updateNote() {
 	console.log('update note');

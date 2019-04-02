@@ -8,6 +8,7 @@ var tasks = [];
 // Function adds a task to the global array.
 function addTask() {
     'use strict';
+    asdf
 
     // Get the task:
     var task = document.getElementById('task');
