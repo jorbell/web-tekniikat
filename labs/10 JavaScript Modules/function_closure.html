@@ -41,12 +41,37 @@ window.onload = function() {
 		div.innerHTML = message + count + " times!";
 	};
 };
+window.onload = function() {
+    var speed = 0;
+    var playbackSpeed = document.getElementById("playback-speed");
+
+    var minusButton = document.getElementById("-");
+    var plusButton = document.getElementById("+");
+    var zeroButton = document.getElementById("0");
+
+    minusButton.onclick = function() {
+        speed--;
+        playbackSpeed.innerHTML = speed;
+    }
+    plusButton.onclick = function() {
+        speed++;
+        playbackSpeed.innerHTML = speed;
+    }
+    zeroButton.onclick = function() {
+        speed = 0;
+        playbackSpeed.innerHTML = speed;
+    }
+}
 
 </script> 
 </head> 
 <body>
 	<button id="clickme">Click me!</button>
+        <button id="-">-</button>
+        <button id="0">0</button>
+        <button id="+">+</button>
 	<div id="message"></div>
+        <div id="playback-speed"></div>
 </body>
 </html>
 

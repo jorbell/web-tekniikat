@@ -31,6 +31,55 @@ function Coffee(roast, ounces) {
 		}
 		return msg;
 	};
+    this.sip = function() {
+        console.log("Hmm, tasty");
+    };
+}
+function Tea(type, ounces) {
+    this.type = type;
+    this.ounces = ounces;
+    
+
+    this.getSize = function() {
+            if (this.ounces === 8) {
+                    return "small";
+            } else if (this.ounces === 12) {
+                    return "medium";
+            } else if (this.ounces === 16) {
+                    return "large";
+            }
+    };
+    this.getSteepTime = function() {
+        switch (this.type) {
+                case "green":
+                    return "1 minute";
+                case "black":
+                    return "2 minutes";
+                case "roibos":
+                    return "3 minutes";
+                default:
+                    return "4 minutes";
+        }
+
+    };
+
+    this.order = function() {
+            var msg;
+            switch (this.getSize()) {
+                    case "small":
+                    case "medium":
+                    case "large":
+                            msg = "You've ordered a " + this.getSize() + " " + this.type + " tea. The steeptime is " + this.getSteepTime();
+                            break;
+                    default:
+                            msg = "We don't have a " + this.type + " tea in that size!";
+                            break;
+            }
+            return msg;
+    };
+    this.sip = function (){
+        console.log("Hmm, tasty");
+    };
 }
 
 var coffee = new Coffee("House Blend", 12);
@@ -41,6 +90,19 @@ console.log(darkRoast.order());
 
 var specialBlend = new Coffee("Special Blend", 200);
 console.log(specialBlend.order());
+
+
+var greenTea = new Tea("green", 12);
+console.log(greenTea.order());
+var roibosTea = new Tea("roibos", 16);
+console.log(roibosTea.order());
+var blackTea = new Tea("black", 8);
+console.log(blackTea.order());
+
+
+blackTea.sip();
+darkRoast.sip();
+coffee.sip();
 
 </script>
 </head>

@@ -32,7 +32,7 @@
 	/**
 	 * Finds and returns a model in storage. If no query is given it'll simply
 	 * return everything. If you pass in a string or number it'll look that up as
-	 * the ID of the model to find. Lastly, you can pass it an object to match
+         * the ID of the model to find. Lastly, you can pass it an object to match
 	 * against.
 	 *
 	 * @param {string|number|object} [query] A query to match models against
