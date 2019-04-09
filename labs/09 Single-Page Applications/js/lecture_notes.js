@@ -45,7 +45,7 @@ document.querySelector('#addPage button').onclick = function() {
     //Getting the values of input and textarea
     var title = document.querySelector('#addPage input').value;
     var note = document.querySelector('#addPage textarea').value;
-    //Pushing the values to list 
+    //Pushing the values to list
     notes.push({title: title, note: note});
 
     console.log(notes[notes.length - 1]);

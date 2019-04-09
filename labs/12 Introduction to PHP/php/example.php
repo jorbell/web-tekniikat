@@ -5,5 +5,4 @@
     $number = $number + $text;
     $f_number = $f_number + $text;
     echo  "Values ".  $number . " and " . $f_number;
-
 ?>

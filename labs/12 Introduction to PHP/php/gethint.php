@@ -44,13 +44,14 @@ if ($q !== "") {
         if (stristr($q, substr($name, 0, $len))) {
             if ($hint === "") {
                 $hint = $name;
-            } else {
+            }/* else {
                 $hint .= ", $name";
-            }
+                }*/
         }
     }
 }
 
 // Output "no suggestion" if no hint was found or output correct values 
-echo $hint === "" ? "no suggestion" : $hint;
+//echo $hint === "" ? "no suggestion" : $hint;
+echo '{"firstname":"' . $hint . '"}'
 ?>

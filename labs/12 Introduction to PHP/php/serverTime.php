@@ -1,3 +1,3 @@
 <?php
-echo date("H:i:s") . "<br />" . rand();
+echo date("H:i:s") . "    " . rand();
 ?>
