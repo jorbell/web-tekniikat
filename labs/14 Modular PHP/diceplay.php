@@ -28,6 +28,9 @@ for ($i = 1; $i<=$faces; $i++) {
 echo json_encode(array('faces'=>$faces,'results'=>$results,'frequencies'=>$freqs));
 echo '<br /> Avarage of throws: ' . $dice->getAvarage();
 if(isset($material)){
-    echo $dice->getMaterial();
+    echo '<br />Material: ' . $dice->getMaterial();
+}
+if(isset($p)){
+    echo '<br /> P=' . $dice->getP();
 }
 ?>
